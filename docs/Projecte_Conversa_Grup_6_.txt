@@ -1,0 +1,299 @@
+package com.iesebre;
+
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+import javax.swing.plaf.synth.SynthTextAreaUI;
+import java.awt.desktop.ScreenSleepEvent;
+import java.awt.desktop.SystemEventListener;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String conversa = scanner.nextLine();
+
+        System.out.println("Vols parla: ");
+        System.out.println("-Persona:");
+        System.out.println("-Animal");
+        System.out.println("-Extraterreste");
+
+        switch (conversa) {
+
+            case "Persona":
+                System.out.println("Escull que el vols preguntar:");
+                System.out.println("1. Quin tipus de persona ets?");
+                System.out.println("2.Quin esport t'agrada?");
+                System.out.println("3.Quin és el teu número favorit entre 0 i ...");
+                System.out.println("4.Sabries llista tots els nombres parells resultants de la multiplicació, entre el valor enter\n" +
+                        "de a i b, on el valor de a creixerà fins b, b decreixerà fins a ?");
+                System.out.println("5.Juguem a pedra paper i tisora?");
+                System.out.println("6.Posa-li un nom");
+                System.out.println("7.Pots recordar-me la nostra conversa?");
+                System.out.println("8.Sortida de l'aplicació");
+
+                int pregunta = scanner.nextInt();
+
+                scanner.nextLine();
+
+                switch (pregunta) {
+
+                    case 1 -> {
+                        System.out.println("Quin tipus de persona ets?");
+                        int resposta = scanner.nextInt();
+                        int n1 = 2;
+                        int n2 = 3;
+                        scanner.nextLine();
+                        while (resposta > 100) {
+                            System.out.println(resposta - 4);
+                            resposta--;
+                        }
+                        while (resposta <= 0) {
+                            System.out.println(resposta + 2);
+                            resposta++;
+                        }
+                        if ((resposta % n1 == 0) && (resposta % n2 != 0)) {
+                            System.out.println("Home");
+                        } else if ((resposta % n1 != 0) && (resposta % n2 == 0)) {
+                            System.out.println("Dona");
+                        } else {
+                            System.out.println("No binari");
+
+                        }
+                    }
+
+                    case 2 -> {
+                        System.out.println("Quin esport t'agrada?");
+                        System.out.println("1.Futbol");
+                        System.out.println("Bàsquet");
+                        System.out.println("3.Tenis");
+                        System.out.println("4.Pàdel");
+                        System.out.println("5.Natació");
+                        System.out.println("6.Petanca");
+                        System.out.println("7.Patinatge");
+                        System.out.println("8.Twirling");
+                        System.out.println("9.Esquí");
+                        System.out.println("10.eSports");
+                        int esport = scanner.nextInt();
+                        switch (esport) {
+                            case 1 -> System.out.println("Futbol");
+                            case 2 -> System.out.println("Bàsquet");
+                            case 3 -> System.out.println("Tenis");
+                            case 4 -> System.out.println("Pàdel");
+                            case 5 -> System.out.println("Natació");
+                            case 6 -> System.out.println("Petanca");
+                            case 7 -> System.out.println("Patinatge");
+                            case 8 -> System.out.println("Twirling");
+                            case 9 -> System.out.println("Esquí");
+                            case 10 -> System.out.println("eSports");
+                        }
+                    }
+
+                    case 3 -> {
+
+                        System.out.println("Quin és el teu número favorit entre 0 i ...?");
+                        int num = scanner.nextInt();
+                        int i = 0;
+
+                        while (i <= num / 2) {
+                            System.out.println(i);
+                            i++;
+                        }
+                    }
+
+                    case 4 -> { //System.out.println("No se sap fer l'activitat");
+                    }
+
+                    case 5 -> {
+                        //Encara està en procés la part d'intents
+                        int respostanpc = (int) (Math.random() * 3) + 1;
+                        System.out.print("Escull [1=Pedra, 2=Paper, 3=Tisores]: ");
+                        int resposta6 = scanner.nextInt();
+
+
+                        System.out.print("Jo he escollit: ");
+                        switch (respostanpc) {
+                            case 1 -> {
+                                System.out.println("Pedra");
+                                switch (resposta6) {
+                                    case 1 -> System.out.println("Empat");
+                                    case 2 -> System.out.println("Guanyes");
+                                    case 3 -> System.out.println("Perds");
+                                }
+                            }
+                            case 2 -> {
+                                System.out.println("Paper");
+                                switch (resposta6) {
+                                    case 1 -> System.out.println("Has perdut");
+                                    case 2 -> System.out.println("Empat");
+                                    case 3 -> System.out.println("Guanyes");
+                                }
+                            }
+                            case 3 -> {
+                                System.out.println("Tisores");
+                                switch (resposta6) {
+                                    case 1 -> System.out.println("Has guanyat");
+                                    case 2 -> System.out.println("Has perdut");
+                                    case 3 -> System.out.println("Empat");
+
+
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+            case "Animal":
+                //Ivan ponlo aqui:
+                break;
+
+            case "Extraterreste":
+                System.out.println("Cuestionario:");
+                System.out.println("1.Tipo de alien");
+                System.out.println("2.Como te desplazas?");
+                System.out.println("3.Cual es tu numero favorito?");
+                System.out.println("4.Sabrias listar todos los numeros depues de la coma...");
+                System.out.println("5.Juegas a los barquitos?");
+                System.out.println("6.Ponle un nombre");
+                System.out.println("7.Te acuerda de las conversacion?");
+                System.out.println("8.Salir");
+                int opcion = scanner.nextInt();
+                switch (opcion) {
+
+                    //Ejercicio 1
+
+
+                    case 1:
+
+                        System.out.println("Escribe un float de (0.0 a 10.0): ");
+                        float numero;
+                        String tipo = "";
+                        numero = scanner.nextFloat();
+                        numero = numero % 1; //sobrante de una division
+                        numero = numero * 10; // sirve para mover la coma hacia un lugar
+                        numero = Math.round(numero); //con esto redondeamos el numero dado por la operacion anterior.
+
+                        // System.out.println(numero);
+                        if (numero > 5) tipo = "Pau";
+                        if (numero < 5) tipo = "Assasi";
+                        if (numero == 5.0) tipo = "Sucubo";
+
+                        System.out.println("El alien es tipo: " + tipo); //con el "+", es usado para concatenar textos con variables
+                        break;
+
+                    //Ejercicio 2
+
+                    case 2:
+                        System.out.print("Escribe un float entre (0 y 1):");
+                        float random;
+                        //Scanner sc = new Scanner(System.in);
+
+                        random = scanner.nextFloat();
+                        random = random % 1;
+                        random = random * 10;
+
+                        if (random == 0) {
+                            System.out.print("Mi metodo de transporte es: ");
+                            System.out.println("Nave");
+                        } else if (random == 1) {
+                            System.out.print("Mi metodo de transporte es: ");
+                            System.out.println("Cohete");
+                        } else if (random == 2) {
+                            System.out.print("Mi metodo de transporte es: ");
+                            System.out.println("Propulsor");
+                        } else if (random == 3) {
+                            System.out.print("Mi metodo de transporte es: ");
+                            System.out.println("Teletransporte");
+                        } else if (random == 4) {
+                            System.out.print("Mi metodo de transporte es: ");
+                            System.out.println("Coche");
+                        } else if (random == 5) {
+                            System.out.print("Mi metodo de transporte es: ");
+                            System.out.println("Portales");
+                        } else if (random == 6) {
+                            System.out.print("Mi metodo de transporte es: ");
+                            System.out.println("Velocidad de la luz");
+                        } else if (random == 7) {
+                            System.out.print("Mi metodo de transporte es: ");
+                            System.out.println("Traje de ironman");
+                        } else if (random == 8) {
+                            System.out.print("Mi metodo de transporte es: ");
+                            System.out.println("Tanque Sovietico");
+                        } else if (random == 9) {
+                            System.out.print("Mi metodo de transporte es: ");
+                            System.out.println("F-35 Lightning II");
+                        } else if (random == 10) {
+                            System.out.print("Mi metodo de transporte es: ");
+                            System.out.println("Triciclo");
+                        }
+
+                        break;
+
+                    //Ejercicio 3
+
+                    case 3:
+                        System.out.println("Escribe un numero positivo: ");
+
+                        float numeroFav;
+
+                        numeroFav = scanner.nextFloat();
+                        numeroFav = numeroFav / 2;
+
+                        float i = 0;
+                        while (i <= numeroFav) {
+                            System.out.printf("%.1f ", i);
+                            i += 0.1;
+                            System.out.println("");
+                        }
+                        float resultado = i;
+                        System.out.print("Mi numero favorito es: ");
+                        System.out.printf("%.0f", resultado);
+                        break;
+
+                    //Ejercicio 4
+
+                    case 4:
+
+                        break;
+                    //Ejercicio 5
+
+                    case 5:
+
+                        float numeroEntrada;
+
+
+                        System.out.println("Vamos a jugar a un juego, elije tu numero: ");
+                        float numeroAleatorio = (float) (Math.random() * 5);
+                        numeroEntrada = scanner.nextFloat();
+
+                        while (numeroAleatorio != numeroEntrada) {
+
+
+
+                        }
+
+                        break;
+
+                    //Ejercicio 6
+
+                    case 6:
+
+                        String nombreAlien;
+
+
+                        nombreAlien = scanner.nextLine();
+
+                        System.out.println(nombreAlien + "Gracias, me gusta este nombre. ");
+
+                        // float numeroAleatorio = (float) (Math.random()*4);
+                        // numeroAleatorio = Math.round(numeroAleatorio*100)/100;
+                        // System.out.println(numeroAleatorio);
+                        break;
+                }
+
+        }
+
+
+    }
+}
