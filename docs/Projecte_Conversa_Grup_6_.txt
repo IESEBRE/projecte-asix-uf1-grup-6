@@ -145,7 +145,116 @@ public class Main {
                 }
 
             case "Animal":
-                //Ivan ponlo aqui:
+                 Scanner sc = new Scanner(System.in);
+        Random r = new Random();
+
+        int PreguntaInicial = 0;
+
+        while (PreguntaInicial != 8) {
+            System.out.println("1. Quin tipus d’animal ets?");
+            System.out.println("2. A que t’agrada jugar?");
+            System.out.println("3. Quin és el teu caràcter favorit?");
+            System.out.println("4. Sabries llista tots els caràcters amb valor Unicode parell i menors o iguals a Z resultants\n" +
+                    "de la suma, entre el valor Unicode del primer i segon caràcter, on el valor Unicode del\n" +
+                    "primer creixerà fins al segon, el segon decreixerà fins primer ?");
+            System.out.println("5. Juguem a fer onomatopeies?");
+            System.out.println("6. Posa-li un nom:");
+            System.out.println("7. Pots recordar-me la nostra conversa?");
+            System.out.println("8. Sortida de l’aplicació.");
+            PreguntaInicial = sc.nextInt();
+
+
+            switch (PreguntaInicial) {
+                case 1:
+                    // EXERCICI 9
+                    System.out.println("Introdueix una lletra:");
+                    char a = sc.next().charAt(0);
+
+                    if (a == 'G') {
+                        System.out.println("Sóc un gos");
+                    } else if (a == 'M') {
+                        System.out.println("Sóc un mono");
+                    } else if (a == 'S') {
+                        System.out.println("Sóc una serp");
+                    } else {
+                        System.out.println("No existeix");
+
+                    }
+                    break;
+
+                case 2:
+                    // EXERCICI 10
+                    System.out.println("Introdueix una lletra de la A a la J:");
+                    String joc = sc.next();
+                    char joc1 = joc.charAt(0);
+                    if (joc1 == 'A') {
+                        System.out.println("M'agrada jugar a l'Among Us");
+                    } else if (joc1 == 'B') {
+                        System.out.println("M'agrada jugar a futbol");
+                    } else if (joc1 == 'C') {
+                        System.out.println("M'agrada jugar a tenis");
+                    } else if (joc1 == 'D') {
+                        System.out.println("M'agrada jugar a pàdel");
+                    } else if (joc1 == 'E') {
+                        System.out.println("M'agrada jugar al FIFA");
+                    } else if (joc1 == 'F') {
+                        System.out.println("M'agrada jugar al Farming Simulator");
+                    } else if (joc1 == 'G') {
+                        System.out.println("M'agrada jugar al Pacman");
+                    } else if (joc1 == 'H') {
+                        System.out.println("M'agrada jugar al LOL");
+                    } else if (joc1 == 'I') {
+                        System.out.println("M'agrada jugar al Tetris");
+                    } else if (joc1 == 'J') {
+                        System.out.println("M'agrada fer problemes al JO-EL");
+                    }
+                    break;
+
+                case 3:
+                    // EXERCICI 11
+
+                    break;
+
+                case 4:
+                    // EXERCICI 12
+
+                    break;
+
+                case 5:
+                    // EXERCICI 13
+                    int intents = 0;
+                    int resultat = 0;
+                    while (intents != 10) {
+                        char c1 = sc.next().charAt(0);
+                        System.out.println("TU: " + c1);
+                        char c2 = (char) (r.nextInt(26) + 'a');
+                        System.out.println("ELL: " + c2);
+                        char c3 = sc.next().charAt(0);
+                        System.out.println("TU: " + c3);
+                        String str = new StringBuilder().append(c1).append(c2).append(c3).toString();
+                        char vocal = str.charAt(1);
+
+                        if (vocal == 'a' || vocal == 'e' || vocal == 'i' || vocal == 'o' || vocal == 'u') {
+                            System.out.println(str + " es una onomatopeia");
+                            ++resultat;
+                        } else {
+                            System.out.println(str + " no es una onomatopeia");
+                        }
+                        ++intents;
+                        System.out.println("Portes " + resultat + " onomatopeia/es");
+                        System.out.println("Portes " + intents + " intent/s");
+                    break;
+
+                case 6:
+                    // EXERCICI 14
+                    String nom = sc.nextLine();
+                    System.out.println(nom + "... Gràcies! M'agrada aquest nom");
+                    break;
+
+                    }
+                    break;
+            }
+        }
                 break;
 
             case "Extraterreste":
