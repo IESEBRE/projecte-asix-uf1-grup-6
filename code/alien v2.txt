@@ -173,9 +173,7 @@ public class Main {
                         if (preguntas[3] == true) {
                             if (Diferencia == 0) {
                                 System.out.println("tocado");
-                                System.out.println("ganaste");
-                                Final = true;
-                                PartidaGuanyada = true;
+                                System.out.println("ganaste")
                                 preguntas[4] = true;
                             } else if (Diferencia > 0 && Diferencia <= 0.3f) {
                                 System.out.println("Estas cerca");
