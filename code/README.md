@@ -1,3 +1,10 @@
 # Carpeta code
 
-Per crear les carpetes en el/s projecte/s
+# Animal
+A l'arxiu "animal" està tot el projecte de la classe animal amb el seu main
+
+# Alien
+Pendent
+
+# Persona
+Pendent
