@@ -1,7 +1,7 @@
 # Carpeta code
 
 # Animal
-A l'arxiu "animal" està tot el projecte de la classe animal amb el seu main
+Dins de la carpeta "animal" estàn el main i els exercics de la part d'animal
 
 # Alien
 En el archivo "alien v2" esta todo lo que tiene que corregir
