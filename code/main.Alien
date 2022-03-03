@@ -1,0 +1,27 @@
+package com.iesebre;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        boolean finish = false;
+        do {
+            Scanner scanner = new Scanner(System.in);
+
+
+            System.out.println("Elije con quien quieres hablar: ");
+            System.out.println("  - Alien");
+            System.out.print("Opció: ");
+            switch (scanner.nextLine()) {
+                case "Alien" -> {
+                    Alien alien = new Alien();
+                    finish = alien.talking();
+                }
+                case "Salir" -> {
+
+                }
+            }
+        } while (!finish);
+    }
+}
